@@ -59,9 +59,12 @@ public class BoundingBoxUtil {
 	public static String createPolygon(BoundingBox b){
 		return new StringBuilder().append("POLYGON ((")
 				.append(b.getXmin()).append(" ").append(b.getYmin()).append(", ")
-				.append(b.getXmax()).append(" ").append(b.getYmin()).append(", ")
+				.append(b.getXmin()).append(" ").append(b.getYmax()).append(", ")
 				.append(b.getXmax()).append(" ").append(b.getYmax()).append(", ")
-				.append(b.getXmin()).append(" ").append(b.getYmax()).append("))").toString();
+				.append(b.getXmax()).append(" ").append(b.getYmin()).append(", ")
+				.append(b.getXmin()).append(" ").append(b.getYmin())
+				.append("))")
+				.toString();
 	}
 	
 	/**
@@ -76,9 +79,10 @@ public class BoundingBoxUtil {
 		for(BoundingBox b : listBoundingBox){
 			sb.append("((")
 			.append(b.getXmin()).append(" ").append(b.getYmin()).append(", ")
-			.append(b.getXmax()).append(" ").append(b.getYmin()).append(", ")
+			.append(b.getXmin()).append(" ").append(b.getYmax()).append(", ")
 			.append(b.getXmax()).append(" ").append(b.getYmax()).append(", ")
-			.append(b.getXmin()).append(" ").append(b.getYmax())
+			.append(b.getXmax()).append(" ").append(b.getYmin()).append(", ")
+			.append(b.getXmin()).append(" ").append(b.getYmin())
 			.append("))")
 			.append(", ");
 		}
